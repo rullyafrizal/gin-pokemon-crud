@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8081:8080"
+    volumes:
+      - .:/pokemon-docker
+    depends_on:
+      - database
+    container_name: pokemon-docker-web
+    tty: true
+
+  database:
+    build:
+      context: .
+      dockerfile: ./db.Dockerfile
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASS}
+      MYSQL_DATABASE: ${DB_NAME}
+    tty: true
+    container_name: pokemon-docker-db
+    restart: always
+    ports:
+      - 33771:3306
+    expose:
+      - 3306
+    volumes:
+      - ./docker/mysql/conf/my.cnf:/etc/mysql/conf.d/my.cnf
+      - pokemon-docker-db:/var/lib/mysql
+
+volumes:
+  pokemon-docker-db:
+    driver: local
