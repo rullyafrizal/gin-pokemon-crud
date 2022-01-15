@@ -29,6 +29,7 @@ services:
     volumes:
       - ./docker/mysql/conf/my.cnf:/etc/mysql/conf.d/my.cnf
       - pokemon-docker-db:/var/lib/mysql
+      - ./docker/mysql/sql:/docker-entrypoint-initdb.d/
 
 volumes:
   pokemon-docker-db:

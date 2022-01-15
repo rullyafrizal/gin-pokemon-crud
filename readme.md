@@ -2,34 +2,46 @@
 - Aplikasi REST API CRUD Pokemon
 
 ## Tech Stack
-- Go 1.18
+- Go 1.17
+- Gin 1.7.7
 - MySQL 8.0
 - Docker Engine 20.10.7
 - Docker Compose v2
 
+## Endpoints
+| Route  | HTTP Method   | Handler |
+| ------------- | -------------  | ------------- |
+| /api/v1/pokemons/  | GET    | controllers.GetPokemons |
+| /api/v1/pokemons/:id  | GET    | controllers.GetPokemon  |
+| /api/v1/pokemons  | POST    | controllers.StorePokemon  |
+| /api/v1/pokemons/:id  | PUT    | controllers.UpdatePokemon  |
+| /api/v1/pokemons/:id  | DELETE    | controllers.DeletePokemon  |
+
 ### Installation
 1. Configure .env files, => copy .env.example and rename it to .env
 
-2. Set up all configuration in .env files
+2. Don't change anything after you copy .env.example to .env
 
 4. Build docker image
 
     ```bash
-    $ docker compose build
+    docker compose build
     ```
 
-4. Create and run docker container using docker compose
+5. Create and run docker container using docker compose
   
     ```bash
-    $ docker compose up -d  **or** $ docker-compose up -d
+    docker compose up -d
     ```
 
-5. The app is ready to rock and roll
-6. You can access the app at http://localhost:8081
+- If you're not using compose v2, you can use `docker-compose` instead of `docker compose`
+
+6. The app is ready to rock and roll
+7. You can access the app at http://localhost:8081
 
 - MySQL Client
   ```bash
-    $ docker exec -it pokemon-docker-db mysql -uroot -psecret
+    docker exec -it pokemon-docker-db mysql -uroot -psecret
   ```
 
 
