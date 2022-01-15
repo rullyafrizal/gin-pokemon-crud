@@ -17,6 +17,7 @@
 | /api/v1/pokemons/:id  | PUT    | controllers.UpdatePokemon  |
 | /api/v1/pokemons/:id  | DELETE    | controllers.DeletePokemon  |
 
+**Endpoint Documentation** : https://documenter.getpostman.com/view/14542872/UVXjKbWn
 ### Installation
 1. Configure .env files, => copy .env.example and rename it to .env
 

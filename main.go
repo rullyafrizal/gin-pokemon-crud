@@ -6,7 +6,6 @@ import (
 	"pokemon-crud/config"
 	"pokemon-crud/models"
 	"pokemon-crud/routes"
-	"time"
 
 	"github.com/jinzhu/gorm"
 	"github.com/joho/godotenv"
@@ -19,9 +18,6 @@ func main() {
 	if err != nil {
 		log.Fatal("Error loading .env file")
 	}
-
-	fmt.Println("Waiting database service to start...")
-	time.Sleep(time.Second * 6)
 
 	config.DB, err = gorm.Open("mysql", config.DbUrl(config.BuildDbConfig()))
 
