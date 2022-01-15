@@ -23,24 +23,26 @@
 
 2. Don't change anything after you copy .env.example to .env
 
-4. Build docker image
+3. Build docker image, If you're not using compose v2, you can use `docker-compose` instead of `docker compose`
 
     ```bash
     docker compose build
     ```
 
-5. Create and run docker container using docker compose
+4. Create and run docker container using docker compose
   
     ```bash
     docker compose up -d
     ```
+* tips = make sure to wait for the container to start before running the tests, usually it takes about 5-10 seconds after you run `docker-compose up -d`
+* The app is ready to rock and roll, use http://localhost:8081
+* And don't worry about the database, it's already created and filled for you while you build the app with docker
 
-- If you're not using compose v2, you can use `docker-compose` instead of `docker compose`
-
-6. The app is ready to rock and roll
-7. You can access the app at http://localhost:8081
-8. And don't worry about the database, it's already created and filled for you while you build the app with docker
-
+5. If you want to stop and remove the container
+   
+    ```bash
+    docker compose down
+    ```
 
 * if you want to connect with mysql client, you can use this command:
 - MySQL Client
