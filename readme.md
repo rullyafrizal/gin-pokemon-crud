@@ -19,6 +19,8 @@
 
 **Endpoint Documentation** : https://documenter.getpostman.com/view/14542872/UVXjKbWn
 ### Installation
+- Demo Video : https://www.loom.com/share/5804207837fc494eb0f12c60d3a8775c
+
 1. Configure .env files, => copy .env.example and rename it to .env
 
 2. Don't change anything after you copy .env.example to .env
