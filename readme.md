@@ -39,7 +39,10 @@
 
 6. The app is ready to rock and roll
 7. You can access the app at http://localhost:8081
+8. And don't worry about the database, it's already created and filled for you while you build the app with docker
 
+
+* if you want to connect with mysql client, you can use this command:
 - MySQL Client
   ```bash
     docker exec -it pokemon-docker-db mysql -uroot -psecret
